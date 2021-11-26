@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:hacknsu3_sust_dynamo/screens/Home/signup_page.dart';
 import 'const.dart';
 import 'screens/Home/home.dart';
 
@@ -59,6 +59,6 @@ class BufferWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     screenH = MediaQuery.of(context).size.height;
     screenW = MediaQuery.of(context).size.width;
-    return const Home();
+    return const doctorsignup();
   }
 }
