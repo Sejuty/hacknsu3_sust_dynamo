@@ -114,7 +114,7 @@ class _doctor_profEditState extends State<doctor_profEdit> {
       decoration: InputDecoration(
         prefixIcon: Icon(Icons.account_balance_sharp),
         contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Practice Hospital",
+        hintText: "Present Workplace",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30),
         ),
