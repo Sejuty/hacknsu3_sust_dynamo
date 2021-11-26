@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:hacknsu3_sust_dynamo/screens/Home/signup_page.dart';
+import 'package:hacknsu3_sust_dynamo/screens/Home/doctor_profiledit_page.dart';
+import 'package:hacknsu3_sust_dynamo/screens/Home/patient_profiledit_page.dart';
 
 import 'package:hacknsu3_sust_dynamo/screens/make_appointment/make_appointment.dart';
 import 'package:hacknsu3_sust_dynamo/screens/widget/top_blue_white.dart';
@@ -64,8 +65,6 @@ class BufferWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     screenH = MediaQuery.of(context).size.height;
     screenW = MediaQuery.of(context).size.width;
-
-    return const doctorsignup();
-
+    return const patient_profEdit();
   }
 }

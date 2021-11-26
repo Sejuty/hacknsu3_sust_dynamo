@@ -6,24 +6,20 @@ import 'package:hacknsu3_sust_dynamo/screens/widget/top_blue_white.dart';
 
 import '../../const.dart';
 
-class doctorsignup extends StatefulWidget {
-  const doctorsignup({Key? key}) : super(key: key);
+class patient_profEdit extends StatefulWidget {
+  const patient_profEdit({Key? key}) : super(key: key);
 
   @override
-  _doctorsignupState createState() => _doctorsignupState();
+  _patient_profEditState createState() => _patient_profEditState();
 }
 
-class _doctorsignupState extends State<doctorsignup> {
+class _patient_profEditState extends State<patient_profEdit> {
   final _formKey = GlobalKey<FormState>();
   int selected = 0;
   final firstnameeditcontroller = new TextEditingController();
   final lastnameeditcontroller = new TextEditingController();
-  final specialityeditcontroller = new TextEditingController();
-  final qualificatioditcontroller = new TextEditingController();
   final phoneeditcontroller = new TextEditingController();
-  final practicehospitaleditcontroller = new TextEditingController();
-  final avalableeditcontroller = new TextEditingController();
-  final zoomeditcontroller = new TextEditingController();
+  final gendereditcontroller = new TextEditingController();
   var currentPage = 0;
   var pageViewController = PageController(initialPage: 0);
   @override
@@ -34,7 +30,6 @@ class _doctorsignupState extends State<doctorsignup> {
       controller: firstnameeditcontroller,
       keyboardType: TextInputType.name,
       onSaved: (value) {
-        //will save the value whenever typed in
         firstnameeditcontroller.text = value!;
       },
       textInputAction: TextInputAction.next,
@@ -66,63 +61,8 @@ class _doctorsignupState extends State<doctorsignup> {
         ),
       ),
     );
-//speciality
-    final speciality = TextFormField(
-      autofocus: false,
-      controller: specialityeditcontroller,
-      keyboardType: TextInputType.multiline,
-      onSaved: (value) {
-        specialityeditcontroller.text = value!;
-      },
-      textInputAction: TextInputAction.next,
-      decoration: InputDecoration(
-        prefixIcon: Icon(Icons.school),
-        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Speciality",
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30),
-        ),
-      ),
-    );
-//qualification
-    final qualification = TextFormField(
-      autofocus: false,
-      controller: qualificatioditcontroller,
-      keyboardType: TextInputType.multiline,
-      onSaved: (value) {
-        qualificatioditcontroller.text = value!;
-      },
-      textInputAction: TextInputAction.next,
-      decoration: InputDecoration(
-        prefixIcon: Icon(Icons.auto_stories_sharp),
-        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Qualification",
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30),
-        ),
-      ),
-    );
-
-//Practice Hospital
-    final practHost = TextFormField(
-      autofocus: false,
-      controller: practicehospitaleditcontroller,
-      keyboardType: TextInputType.name,
-      onSaved: (value) {
-        practicehospitaleditcontroller.text = value!;
-      },
-      textInputAction: TextInputAction.next,
-      decoration: InputDecoration(
-        prefixIcon: Icon(Icons.account_balance_sharp),
-        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Practice Hospital",
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30),
-        ),
-      ),
-    );
 //signup Button
-    final signupButtn = Material(
+    final saveButton = Material(
       child: ElevatedButton(
         child: const Center(
             child: Text(
@@ -148,7 +88,7 @@ class _doctorsignupState extends State<doctorsignup> {
     //Phone
     final phnField = TextFormField(
       autofocus: false,
-      controller: specialityeditcontroller,
+      controller: phoneeditcontroller,
       keyboardType: TextInputType.phone,
       onSaved: (value) {
         phoneeditcontroller.text = value!;
@@ -163,48 +103,31 @@ class _doctorsignupState extends State<doctorsignup> {
         ),
       ),
     );
-    //Availabe
-    final availableOn = TextFormField(
+    //Gender
+    final gender = TextFormField(
       autofocus: false,
-      controller: avalableeditcontroller,
-      keyboardType: TextInputType.number,
+      controller: gendereditcontroller,
+      keyboardType: TextInputType.text,
       onSaved: (value) {
-        avalableeditcontroller.text = value!;
+        gendereditcontroller.text = value!;
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.assignment_rounded),
+        prefixIcon: Icon(Icons.male_sharp),
         contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Available On",
+        hintText: "Gender",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30),
         ),
       ),
     );
-//zoom
-    final zoom = TextFormField(
-      autofocus: false,
-      controller: zoomeditcontroller,
-      keyboardType: TextInputType.url,
-      onSaved: (value) {
-        zoomeditcontroller.text = value!;
-      },
-      textInputAction: TextInputAction.done,
-      decoration: InputDecoration(
-        prefixIcon: Icon(Icons.video_camera_front_sharp),
-        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Zoom Link",
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30),
-        ),
-      ),
-    );
+
     return TopBlueWhitePage(
       topWidget: CircleAvatar(
         backgroundColor: Colors.white,
         radius: screenW * .15,
         backgroundImage: NetworkImage(
-            "https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?size=338&ext=jpg"),
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpNgcfq4rLfyt_su6kmQiT9dtHUZCEatjzPg&usqp=CAU"),
       ),
       bottomWidget: Center(
         child: SingleChildScrollView(
@@ -216,29 +139,21 @@ class _doctorsignupState extends State<doctorsignup> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Text("Edit Doctor's Profile",
+                  Text("Edit Profile",
                       style: GoogleFonts.roboto(
-                          fontSize: 30,
+                          fontSize: 25,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black)),
+                          color: Colors.blue[400])),
                   SizedBox(height: 20),
                   firstName,
                   SizedBox(height: 20),
                   lstname,
                   SizedBox(height: 20),
-                  speciality,
-                  SizedBox(height: 20),
-                  qualification,
+                  gender,
                   SizedBox(height: 20),
                   phnField,
                   SizedBox(height: 20),
-                  practHost,
-                  SizedBox(height: 20),
-                  availableOn,
-                  SizedBox(height: 20),
-                  zoom,
-                  SizedBox(height: 20),
-                  signupButtn,
+                  saveButton,
                 ],
               ),
             ),
