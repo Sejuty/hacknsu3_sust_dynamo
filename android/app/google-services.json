@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "769633025623",
+    "project_id": "wecare-63dfc",
+    "storage_bucket": "wecare-63dfc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769633025623:android:a53d7c73dcebcec94ded12",
+        "android_client_info": {
+          "package_name": "com.sustdynamo.hacknsu3_sust_dynamo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769633025623-laq73vb9q0nqmk2jvt9krdvj1c7uhfoj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0_izNoCKzCE6EiRVyu2hrbY3zo2eXwaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "769633025623-laq73vb9q0nqmk2jvt9krdvj1c7uhfoj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
