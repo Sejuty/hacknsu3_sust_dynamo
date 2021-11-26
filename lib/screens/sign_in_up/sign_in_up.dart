@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hacknsu3_sust_dynamo/const.dart';
+import 'package:hacknsu3_sust_dynamo/screens/patient_home/dashboard.dart';
 import 'package:lottie/lottie.dart';
 
 class SignInUp extends StatefulWidget {
@@ -21,7 +23,7 @@ class _SignInUpState extends State<SignInUp> {
         children: [
 // SvgPicture.asset("assets/images/background.svg"),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(18.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -189,6 +191,27 @@ class _SignInState extends State<SignIn> {
   var textEditingControllerUsername = TextEditingController();
   var textEditingControllerPassword = TextEditingController();
   int selected = 0;
+  void signIn() async {
+    if (_formKey.currentState!.validate()) {
+      try {
+        await FirebaseAuth.instance
+            .signInWithEmailAndPassword(
+                email: textEditingControllerUsername.text,
+                password: textEditingControllerPassword.text)
+            .then((value) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Dashboard(),
+            ),
+          );
+        });
+      } catch (e) {
+        print(e);
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -315,11 +338,7 @@ class _SignInState extends State<SignIn> {
                 setState(() {
                   selected = 0;
                 });
-                if (_formKey.currentState!.validate()) {
-                  print('valid');
-                } else {
-                  print('invalid');
-                }
+                signIn();
               },
               child: SizedBox(
                 height: 40,
