@@ -126,7 +126,7 @@ class _doctorsignupState extends State<doctorsignup> {
       child: ElevatedButton(
         child: const Center(
             child: Text(
-          "Sign Up",
+          "Save",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20,
@@ -216,7 +216,7 @@ class _doctorsignupState extends State<doctorsignup> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Text("Sign Up",
+                  Text("Edit Doctor's Profile",
                       style: GoogleFonts.roboto(
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
