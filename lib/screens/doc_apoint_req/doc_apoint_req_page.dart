@@ -20,7 +20,7 @@ class _DocApointReqState extends State<DocApointReq> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.fromLTRB(8.0, screenH * .05, 8, 0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -82,7 +82,7 @@ class _DocApointReqState extends State<DocApointReq> {
                   });
                 },
                 scrollDirection: Axis.horizontal,
-                children:  [
+                children: [
                   RequestPart(),
                   AppointmentPart(),
                 ],

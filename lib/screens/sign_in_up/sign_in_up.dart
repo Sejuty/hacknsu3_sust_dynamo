@@ -23,7 +23,7 @@ class _SignInUpState extends State<SignInUp> {
         children: [
 // SvgPicture.asset("assets/images/background.svg"),
           Padding(
-            padding: const EdgeInsets.all(18.0),
+            padding: EdgeInsets.fromLTRB(8.0, screenH * .05, 8, 0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
